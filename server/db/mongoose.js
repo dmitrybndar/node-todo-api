@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 
+const url = process.env.MONGO_URI || 'mongodb://localhost:27017/TodoApp';
+
 mongoose.connect(
-  'mongodb://localhost:27017/TodoApp',
-  { useNewUrlParser: true }
+  url,
+  { useNewUrlParser: true },
+  () => {
+    console.log('Connected to DB');
+  }
 );
 
 module.exports = mongoose;
