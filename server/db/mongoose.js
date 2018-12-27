@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = process.env.MONGO_URI || 'mongodb://localhost:27017/TodoApp';
+const url = process.env.MONGO_URI;
 
 mongoose.connect(
   url,
